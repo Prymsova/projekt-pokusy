@@ -1,0 +1,219 @@
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+$font-special: 'Signika Negative', sans-serif;
+$color-primary: #FFFF8D;
+$color-secundary: #FFEE58;
+$color-text: #212121;
+$space-primary: 30px;
+$break-point: 700px;
+
+
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+}
+
+.wrapper {
+    background-color: white;
+    font-family: $font-special;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 18px;
+    color: $color-text;
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+.header {
+    padding: $space-primary;
+
+    @media screen and (min-width: $break-point) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__contact {
+        text-align: center;
+        font-size: 24px;
+
+        @media screen and (min-width: $break-point) {
+            flex: 0 0 calc((100% - $space-primary) / 2);
+            text-align: right;
+        }
+    
+        > * {margin: 0;}
+    
+        &-email {
+            text-decoration: none;
+            color: $color-text;
+    
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: $space-primary;
+
+    @media screen and (min-width: $break-point) {
+        margin-bottom: 0;
+        flex: 1 1 calc((100% - $space-primary) / 2);
+        align-items: center;
+    }
+    
+    &__logo {
+        padding-right: 30px;
+    }
+
+    &__text {
+        margin: 0;
+        font-family: $font-special;
+        font-weight: 600;
+
+        @media screen and (min-width: $break-point) {
+            max-width: 220px;
+            /*kvůli zalomení řádků*/
+        }        
+    }
+}
+
+
+
+/*.contacts-phone::before {
+    content: " ";
+    display: block;
+    height: 15px;
+    width: 15px;
+    background-image: url(/icons/phone.svg);
+    margin-right: 10px;
+}*/
+
+.menu {
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        
+        @media screen and (min-width: $break-point) {
+            display: flex;
+            justify-content: center;
+        } 
+    }
+    
+    &__item {
+        margin-bottom: $space-primary / 2;
+
+        &:not(:last-child) {
+            border-right: 1px solid silver;
+        }
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $color-text;
+        font-size: 24px;
+        display: inline-block;
+        padding: $space-primary/2 $space-primary;
+        border: 1px solid silver;
+        border-radius: 4px;
+        box-shadow: 4px 4px 4px silver;
+        min-width: 300px;
+
+        @media screen and (min-width: $break-point) {
+            min-width: auto;
+            border: none;
+            box-shadow: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: $space-primary/3 $space-primary;
+        }
+        
+    
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-primary;
+            font-weight: 700;
+        }
+    }
+
+}
+
+.main,
+.footer {
+    padding: $space-primary/2;
+}
+
+.footer {
+    background-color: #212121;
+}
+
+.contact-form {
+    background-color: white;
+    margin: $space-primary/3 auto;
+    padding: $space-primary/3;
+    max-width: 400px;
+
+    h3 {margin: 0 0 $space-primary/3 0;}
+}
+
+.form {
+	width: 100%;
+
+    &__field {
+        margin-bottom: $space-primary/3;
+    
+        label {
+            display: block;
+        }
+    
+        & input[type="text"],
+        & input[type="email"],
+        & textarea {
+            width: 100%;
+            padding: $space-primary/3;
+            font-size: 16px;
+            border: 1px solid silver;
+            border-radius: 4px;	
+        }
+    }
+}
+
+.button {
+	display: block;
+	background-color: $color-secundary;
+    color: $color-text;
+    font-family: $font-special;
+    font-size: 18px;
+	font-weight: 600;
+	border: none;
+	padding: $space-primary/3 $space-primary/2;
+    margin: $space-primary/2 0;
+    box-shadow: 4px 4px 4px silver;
+    
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: $color-primary;
+    }
+    &:active {
+        background-color: $color-primary;
+        box-shadow: 1px 1px 2px silver;
+        transform: translate(3px, 3px);
+    }
+}

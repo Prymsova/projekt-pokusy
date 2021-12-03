@@ -1,0 +1,194 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #F5F5F5;
+  margin: 0;
+}
+
+.wrapper {
+  background-color: white;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #212121;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-width: 300px;
+}
+
+.header {
+  padding: 30px;
+}
+@media screen and (min-width: 700px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header__contact {
+  text-align: center;
+  font-size: 24px;
+}
+@media screen and (min-width: 700px) {
+  .header__contact {
+    flex: 0 0 calc((100% - $space-primary) / 2);
+    text-align: right;
+  }
+}
+.header__contact > * {
+  margin: 0;
+}
+.header__contact-email {
+  text-decoration: none;
+  color: #212121;
+}
+.header__contact-email:hover, .header__contact-email:focus {
+  text-decoration: underline;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 700px) {
+  .hero {
+    margin-bottom: 0;
+    flex: 1 1 calc((100% - $space-primary) / 2);
+    align-items: center;
+  }
+}
+.hero__logo {
+  padding-right: 30px;
+}
+.hero__text {
+  margin: 0;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 700px) {
+  .hero__text {
+    max-width: 220px;
+    /*kvůli zalomení řádků*/
+  }
+}
+
+/*.contacts-phone::before {
+    content: " ";
+    display: block;
+    height: 15px;
+    width: 15px;
+    background-image: url(/icons/phone.svg);
+    margin-right: 10px;
+}*/
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+@media screen and (min-width: 700px) {
+  .menu__list {
+    display: flex;
+    justify-content: center;
+  }
+}
+.menu__item {
+  margin-bottom: 15px;
+}
+.menu__item:not(:last-child) {
+  border-right: 1px solid silver;
+}
+.menu__link {
+  text-decoration: none;
+  color: #212121;
+  font-size: 24px;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px silver;
+  min-width: 300px;
+}
+@media screen and (min-width: 700px) {
+  .menu__link {
+    min-width: auto;
+    border: none;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 30px;
+  }
+}
+.menu__link:hover, .menu__link:focus, .menu__link:active {
+  background-color: #FFFF8D;
+  font-weight: 700;
+}
+
+.main,
+.footer {
+  padding: 15px;
+}
+
+.footer {
+  background-color: #212121;
+}
+
+.contact-form {
+  background-color: white;
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 400px;
+}
+.contact-form h3 {
+  margin: 0 0 10px 0;
+}
+
+.form {
+  width: 100%;
+}
+.form__field {
+  margin-bottom: 10px;
+}
+.form__field label {
+  display: block;
+}
+.form__field input[type=text], .form__field input[type=email], .form__field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid silver;
+  border-radius: 4px;
+}
+
+.button {
+  display: block;
+  background-color: #FFEE58;
+  color: #212121;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  padding: 10px 15px;
+  margin: 15px 0;
+  box-shadow: 4px 4px 4px silver;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.button:hover, .button:focus {
+  background-color: #FFFF8D;
+}
+.button:active {
+  background-color: #FFFF8D;
+  box-shadow: 1px 1px 2px silver;
+  transform: translate(3px, 3px);
+}/*# sourceMappingURL=style.css.map */
