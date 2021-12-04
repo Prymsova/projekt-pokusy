@@ -106,8 +106,10 @@ body {
 .menu__item {
   margin-bottom: 15px;
 }
-.menu__item:not(:last-child) {
-  border-right: 1px solid silver;
+@media screen and (min-width: 700px) {
+  .menu__item:not(:last-child) {
+    border-right: 1px solid silver;
+  }
 }
 .menu__link {
   text-decoration: none;
@@ -191,4 +193,30 @@ body {
   background-color: #FFFF8D;
   box-shadow: 1px 1px 2px silver;
   transform: translate(3px, 3px);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 0 15px;
+}
+
+.gallery__item {
+  border: 1px solid silver;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: white;
+  overflow: hidden;
+}
+.gallery__item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+.gallery__item:hover {
+  border: 2px solid #FFFF8D;
+}
+.gallery__item:hover img {
+  transform: scale(1.2);
 }/*# sourceMappingURL=style.css.map */
