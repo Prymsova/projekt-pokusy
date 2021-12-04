@@ -2,6 +2,92 @@
 layout: header.njk
 ---
 
-<section>
+<!-- vložení mapy pomocí https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-javascript
+druhá možnost viz https://extension.umaine.edu/plugged-in/technology-marketing-communications/web/tips-for-web-managers/embed-map/-->
+
+<section class="section-contacts">
+
+    <div class="contacts__grid">
+
+        <div class="contacts__left-column">
+
+            <div class="contacts__item">
+                <h3>Kde nás najdete:</h3>
+
+                <div class="contacts__map">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2554.600442070599!2d15.827181015612766!3d50.18730651417182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd4ad96ac6965%3A0x578e0f0b6438b279!2zTWFjaGtvdmEgNTg3LCBUxZllYmXFoSwgNTAwIDExIEhyYWRlYyBLcsOhbG92w6k!5e0!3m2!1scs!2scz!4v1638649301590!5m2!1scs!2scz" min-width="400" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    
+                </div>
+            </div>
+            
+            <div class="contacts__item adress">
+                <h3>Fakturační údaje:</h3>
+                <p>
+                    Radka Hübnerová<br>
+                    Františka Halase 725/10<br>
+                    500 09 Hradec Králové
+                </p>
+                <p>
+                    IČ: 016 82 865
+                </p>
+            </div>
+            
+            <div class="contacts__item adress">
+                <h3>Dodací adresa:</h3>
+                <p>
+                    firaprint - Radka Hübnerová<br>
+                    Machkova 587/42<br>
+                    500 11 Hradec Králové
+                </p>
+            </div>
+            
+            <div class="contacts__item adress">
+                <h3>Telefon:</h3>
+                <div class="phone phone--small">+420 607 959 231</div>
+                <h3>E-mail:</h3>   
+                <div><a class="email email--small" href="mailto:firaprint@centrum.cz">firaprint@centrum.cz</a></div>
+            </div>
+            
+        </div> <!--konec divu pro kontakty-->
+
+
+        <div class="contacts__right-column contact-form">
+    
+            <h3>Napište nám</h3>
+    
+            <form class="form" action="http://formular.itgirls.cz" method="post">
+    
+                <div class="form__field">
+                    <label for="form__email">Váš e-mail *</label>
+                    <input type="email" name="form__email" id="form__email" required>
+                </div>
+    
+                <div class="form__field">
+                    <label for="form__subject">Předmět zprávy</label>
+                    <input type="text" name="form__subject" id="form__subject" required>
+                </div>
+                
+                <div class="form__field">
+                    <label for="form__message">Vaše zpráva nebo dotaz</label>
+                    <textarea name="form__message" id="form__message" rows="8"></textarea>
+                </div>
+    
+                <div class="form__field">
+                    <label for="form__file">Příloha</label>
+                    <input type="file" name="form__file" id="form__file">
+                </div>
+                
+                
+                <button class="button" type="submit">Odeslat</button>
+    
+            </form>
+    
+        </div> <!--konec divu pro formulář-->
+        
+    </div>
+
+
+    
     
 </section>

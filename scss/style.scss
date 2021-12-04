@@ -3,10 +3,11 @@ html { box-sizing: border-box; }
 
 $font-special: 'Signika Negative', sans-serif;
 $color-primary: #FFFF8D;
-$color-secundary: #FFEE58;
+$color-secundary: #FBC02D;
 $color-text: #212121;
 $space-primary: 30px;
 $break-point: 700px;
+$break-point2: 850px;
 
 
 body {
@@ -24,6 +25,16 @@ body {
     margin: 0 auto;
     max-width: 1000px;
     min-width: 300px;
+}
+
+h3 {
+    margin: 0 0 $space-primary/3 0;
+}
+
+.section-terms-of-trade {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 300;
 }
 
 .header {
@@ -44,17 +55,24 @@ body {
             text-align: right;
         }
     
-        > * {margin: 0;}
-    
-        &-email {
-            text-decoration: none;
-            color: $color-text;
-    
-            &:hover,
-            &:focus {
-                text-decoration: underline;
-            }
-        }
+        > * {margin: 0;}  
+    }
+}
+
+.phone,
+.email {
+    text-decoration: none;
+    color: $color-text;
+
+    &--small {
+        font-size: 18px;
+        margin: $space-primary/3 0;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: $color-secundary;
     }
 }
 
@@ -83,7 +101,10 @@ body {
         @media screen and (min-width: $break-point) {
             max-width: 220px;
             /*kvůli zalomení řádků*/
-        }        
+        }
+        @media screen and (min-width: $break-point2) {
+            max-width: 500px;
+        }
     }
 }
 
@@ -114,6 +135,10 @@ body {
     
     &__item {
         margin-bottom: $space-primary / 2;
+
+        @media screen and (min-width: $break-point) {
+            margin-bottom: 0;
+        }
 
         &:not(:last-child) {
             @media screen and (min-width: $break-point) {
@@ -148,6 +173,10 @@ body {
         &:active {
             background-color: $color-primary;
             font-weight: 700;
+
+            @media screen and (min-width: $break-point) {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -155,42 +184,11 @@ body {
 
 .main,
 .footer {
-    padding: $space-primary/2;
+    padding: $space-primary/2 $space-primary;
 }
 
 .footer {
     background-color: #212121;
-}
-
-.contact-form {
-    background-color: white;
-    margin: $space-primary/3 auto;
-    padding: $space-primary/3;
-    max-width: 400px;
-
-    h3 {margin: 0 0 $space-primary/3 0;}
-}
-
-.form {
-	width: 100%;
-
-    &__field {
-        margin-bottom: $space-primary/3;
-    
-        label {
-            display: block;
-        }
-    
-        & input[type="text"],
-        & input[type="email"],
-        & textarea {
-            width: 100%;
-            padding: $space-primary/3;
-            font-size: 16px;
-            border: 1px solid silver;
-            border-radius: 4px;	
-        }
-    }
 }
 
 .button {
@@ -218,6 +216,65 @@ body {
         box-shadow: 1px 1px 2px silver;
         transform: translate(3px, 3px);
     }
+
+}
+
+/*.contacts__ je div v záložce kontakty, do které jsem do pravého sloupce gridu vložila formulář, resp. div .contact-form, v levém sloupci div .contacts__left-column*/
+.contacts__grid {
+    @media screen and (min-width: $break-point2) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-primary/2;
+        align-items: start;
+    }
+}
+
+//proč mi nefunguje stylování divů s class contacts__item???
+.contacts__item {
+    margin-bottom: $space-primary;
+    padding: $space-primary/3;
+
+    &.adress {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.contacts__map {
+    width: 100%;
+}
+
+
+/*původní formulace z patičky, kde toto byl div zabalující celý formulář vč. nadpisu*/
+.contact-form {
+    background-color: #FAFAFA;
+    margin: 0 auto;
+    padding: $space-primary/3;
+    max-width: 400px;
+    width: 100%;
+}
+
+/*toto byl element čistě s formulářem a jednotlivými položkami*/
+.form {
+	width: 100%;
+
+    &__field {
+        margin-bottom: $space-primary/3;
+    
+        label {
+            display: block;
+        }
+    
+        & input[type="text"],
+        & input[type="email"],
+        & textarea {
+            width: 100%;
+            padding: $space-primary/3;
+            font-size: 16px;
+            border: 1px solid silver;
+            border-radius: 4px;	
+        }
+    }
 }
 
 .gallery__grid {
@@ -242,7 +299,7 @@ body {
     }
 
     &:hover {
-        border: 2px solid $color-primary;
+        border: 2px solid $color-secundary;
     
         & img {
             transform: scale(1.2);

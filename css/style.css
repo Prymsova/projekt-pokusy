@@ -24,6 +24,16 @@ body {
   min-width: 300px;
 }
 
+h3 {
+  margin: 0 0 10px 0;
+}
+
+.section-terms-of-trade {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
 .header {
   padding: 30px;
 }
@@ -47,12 +57,22 @@ body {
 .header__contact > * {
   margin: 0;
 }
-.header__contact-email {
+
+.phone,
+.email {
   text-decoration: none;
   color: #212121;
 }
-.header__contact-email:hover, .header__contact-email:focus {
+.phone--small,
+.email--small {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.phone:hover, .phone:focus,
+.email:hover,
+.email:focus {
   text-decoration: underline;
+  color: #FBC02D;
 }
 
 .hero {
@@ -82,6 +102,11 @@ body {
     /*kvůli zalomení řádků*/
   }
 }
+@media screen and (min-width: 850px) {
+  .hero__text {
+    max-width: 500px;
+  }
+}
 
 /*.contacts-phone::before {
     content: " ";
@@ -105,6 +130,11 @@ body {
 }
 .menu__item {
   margin-bottom: 15px;
+}
+@media screen and (min-width: 700px) {
+  .menu__item {
+    margin-bottom: 0;
+  }
 }
 @media screen and (min-width: 700px) {
   .menu__item:not(:last-child) {
@@ -136,46 +166,24 @@ body {
   background-color: #FFFF8D;
   font-weight: 700;
 }
+@media screen and (min-width: 700px) {
+  .menu__link:hover, .menu__link:focus, .menu__link:active {
+    text-decoration: underline;
+  }
+}
 
 .main,
 .footer {
-  padding: 15px;
+  padding: 15px 30px;
 }
 
 .footer {
   background-color: #212121;
 }
 
-.contact-form {
-  background-color: white;
-  margin: 10px auto;
-  padding: 10px;
-  max-width: 400px;
-}
-.contact-form h3 {
-  margin: 0 0 10px 0;
-}
-
-.form {
-  width: 100%;
-}
-.form__field {
-  margin-bottom: 10px;
-}
-.form__field label {
-  display: block;
-}
-.form__field input[type=text], .form__field input[type=email], .form__field textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid silver;
-  border-radius: 4px;
-}
-
 .button {
   display: block;
-  background-color: #FFEE58;
+  background-color: #FBC02D;
   color: #212121;
   font-family: "Signika Negative", sans-serif;
   font-size: 18px;
@@ -193,6 +201,56 @@ body {
   background-color: #FFFF8D;
   box-shadow: 1px 1px 2px silver;
   transform: translate(3px, 3px);
+}
+
+/*.contacts__ je div v záložce kontakty, do které jsem do pravého sloupce gridu vložila formulář, resp. div .contact-form, v levém sloupci div .contacts__left-column*/
+@media screen and (min-width: 850px) {
+  .contacts__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+  }
+}
+
+.contacts__item {
+  margin-bottom: 30px;
+  padding: 10px;
+}
+.contacts__item.adress {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.contacts__map {
+  width: 100%;
+}
+
+/*původní formulace z patičky, kde toto byl div zabalující celý formulář vč. nadpisu*/
+.contact-form {
+  background-color: #FAFAFA;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/*toto byl element čistě s formulářem a jednotlivými položkami*/
+.form {
+  width: 100%;
+}
+.form__field {
+  margin-bottom: 10px;
+}
+.form__field label {
+  display: block;
+}
+.form__field input[type=text], .form__field input[type=email], .form__field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid silver;
+  border-radius: 4px;
 }
 
 .gallery__grid {
@@ -215,7 +273,7 @@ body {
   transition: transform 0.5s;
 }
 .gallery__item:hover {
-  border: 2px solid #FFFF8D;
+  border: 2px solid #FBC02D;
 }
 .gallery__item:hover img {
   transform: scale(1.2);
