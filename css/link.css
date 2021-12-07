@@ -1,0 +1,37 @@
+.phone,
+.email {
+  text-decoration: none;
+  color: #212121;
+}
+.phone--small,
+.email--small {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.phone:hover, .phone:focus,
+.email:hover,
+.email:focus {
+  text-decoration: underline;
+  color: #FBC02D;
+}
+
+/*.contacts-phone::before {
+    content: " ";
+    display: block;
+    height: 15px;
+    width: 15px;
+    background-image: url(/icons/phone.svg);
+    margin-right: 10px;
+}*/
+.link {
+  color: #212121;
+  font-weight: bold;
+}
+.link--footer {
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+}
+.link:hover, .link:focus, .link:active {
+  color: #FBC02D;
+}/*# sourceMappingURL=link.css.map */

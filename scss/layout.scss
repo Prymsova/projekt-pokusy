@@ -1,0 +1,66 @@
+@use "base";
+
+body {
+    background-color: #F5F5F5;
+    margin: 0;
+}
+
+.wrapper {
+    background-color: white;
+    font-family: base.$font-special;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 18px;
+    color: base.$color-text;
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+h3 {
+    margin: 0 0 base.$space-primary/3 0;
+}
+
+.section-terms-of-trade {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+.main,
+.footer {
+    padding: base.$space-primary/2 base.$space-primary;
+}
+
+.footer {
+    background-image: linear-gradient(to bottom, white, base.$color-primary);
+
+    h4 {
+        color: base.$color-text;
+    }
+}
+
+/*.contacts__ je div v záložce kontakty, do které jsem do pravého sloupce gridu vložila formulář, resp. div .contact-form, v levém sloupci div .contacts__left-column*/
+.contacts__grid {
+    @media screen and (min-width: base.$break-point2) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-primary/2;
+        align-items: start;
+    }
+}
+
+//proč mi nefunguje stylování divů s class contacts__item???
+.contacts__item {
+    margin-bottom: base.$space-primary;
+    padding: base.$space-primary/3;
+
+    &.adress {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.contacts__map {
+    width: 100%;
+}

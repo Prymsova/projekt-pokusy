@@ -1,0 +1,47 @@
+@use "base";
+
+.phone,
+.email {
+    text-decoration: none;
+    color: base.$color-text;
+
+    &--small {
+        font-size: 18px;
+        margin: base.$space-primary/3 0;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: base.$color-secundary;
+    }
+}
+
+
+/*.contacts-phone::before {
+    content: " ";
+    display: block;
+    height: 15px;
+    width: 15px;
+    background-image: url(/icons/phone.svg);
+    margin-right: 10px;
+}*/
+
+
+
+.link {
+    color: base.$color-text;
+    font-weight: bold;
+
+    &--footer {
+        font-weight: 400;
+        font-size: 14px;
+        display: block;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: base.$color-secundary;
+    }
+}

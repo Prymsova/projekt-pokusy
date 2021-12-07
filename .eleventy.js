@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
   // Zkopírovat icons/ do _site/icons/
 	eleventyConfig.addPassthroughCopy("icons");
 
-  eleventyConfig.addPassthroughCopy("js");,
+  eleventyConfig.addPassthroughCopy("js");
 
   return {
     // možné formáty šablon

@@ -116,6 +116,9 @@ h3 {
     background-image: url(/icons/phone.svg);
     margin-right: 10px;
 }*/
+.menu {
+  margin-bottom: 30px;
+}
 .menu__list {
   list-style: none;
   margin: 0;
@@ -172,13 +175,29 @@ h3 {
   }
 }
 
+.link {
+  color: #212121;
+  font-weight: bold;
+}
+.link--footer {
+  font-weight: 400;
+  font-size: 14px;
+  display: block;
+}
+.link:hover, .link:focus, .link:active {
+  color: #FBC02D;
+}
+
 .main,
 .footer {
   padding: 15px 30px;
 }
 
 .footer {
-  background-color: #212121;
+  background-image: linear-gradient(to bottom, white, #FFFF8D);
+}
+.footer h4 {
+  color: #212121;
 }
 
 .button {
@@ -265,6 +284,8 @@ h3 {
   border-radius: 2px;
   padding: 5px;
   background-color: white;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 .gallery__item img {

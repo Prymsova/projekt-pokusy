@@ -1,0 +1,55 @@
+@use "base";
+
+.header {
+    padding: base.$space-primary;
+
+    @media screen and (min-width: base.$break-point) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__contact {
+        text-align: center;
+        font-size: 24px;
+
+        @media screen and (min-width: base.$break-point) {
+            flex: 0 0 calc((100% - base.$space-primary) / 2);
+            text-align: right;
+        }
+    
+        > * {margin: 0;}  
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: base.$space-primary;
+
+    @media screen and (min-width: base.$break-point) {
+        margin-bottom: 0;
+        flex: 1 1 calc((100% - base.$space-primary) / 2);
+        align-items: center;
+    }
+    
+    &__logo {
+        padding-right: 30px;
+    }
+
+    &__text {
+        margin: 0;
+        font-family: base.$font-special;
+        font-weight: 600;
+
+        @media screen and (min-width: base.$break-point) {
+            max-width: 220px;
+            /*kvůli zalomení řádků*/
+        }
+        @media screen and (min-width: base.$break-point2) {
+            max-width: 500px;
+        }
+    }
+}
