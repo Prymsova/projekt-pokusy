@@ -1,0 +1,19 @@
+@use "base";
+
+.glider {
+    max-width: 450px;
+
+    &__item {
+        padding: base.$space-primary/2;
+        border-radius: 10px;
+        border: 1px dotted silver;
+        min-height: 100px;
+        min-width: 100px;
+        width: 100%;
+    }
+    &__text {
+        color: #616161;
+        font-style: italic;
+        font-size: 16px;
+    }
+}

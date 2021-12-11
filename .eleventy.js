@@ -13,6 +13,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("js");
 
+  eleventyConfig.addPassthroughCopy("kontakt");
+
   return {
     // možné formáty šablon
     templateFormats: ["njk", "html", "md", "liquid"],

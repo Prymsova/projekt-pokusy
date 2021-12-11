@@ -1,11 +1,12 @@
 ---
 layout: header.njk
+title: firaprint kontakt
 ---
 
 <!-- vložení mapy pomocí https://developers.google.com/maps/documentation/javascript/adding-a-google-map#maps_add_map-javascript
 druhá možnost viz https://extension.umaine.edu/plugged-in/technology-marketing-communications/web/tips-for-web-managers/embed-map/-->
 
-<section class="section-contacts">
+<section class="section section-contacts">
 
     <div class="contacts__grid">
 
@@ -44,7 +45,7 @@ druhá možnost viz https://extension.umaine.edu/plugged-in/technology-marketing
             
             <div class="contacts__item adress">
                 <h3>Telefon:</h3>
-                <div class="phone phone--small">+420 607 959 231</div>
+                <div><a class="phone phone--small" href="tel:+420607959231">+420 607 959 231</a></div>
                 <h3>E-mail:</h3>   
                 <div><a class="email email--small" href="mailto:firaprint@centrum.cz">firaprint@centrum.cz</a></div>
             </div>
@@ -56,16 +57,25 @@ druhá možnost viz https://extension.umaine.edu/plugged-in/technology-marketing
     
             <h3>Napište nám</h3>
     
+            <!--odesílání formuláře - Radka
+            <form class="form" action="https://submit-form.com/wynUWxh6" method="post">-->
+
+            <!--odesílání formuláře - Anička-->
             <form class="form" action="https://submit-form.com/IuqeuZ4K" method="post">
-    
+
                 <div class="form__field">
                     <label for="form__email">Váš e-mail *</label>
-                    <input type="email" name="form__email" id="form__email" required>
+                    <input type="email" name="form__email" id="form__email" value="@" required>
+                </div>
+
+                <div class="form__field">
+                    <label for="form__phone">Vaše telefonní číslo *</label>
+                    <input type="tel" name="form__phone" id="form__phone" required>
                 </div>
     
                 <div class="form__field">
                     <label for="form__subject">Předmět zprávy</label>
-                    <input type="text" name="form__subject" id="form__subject" required>
+                    <input type="text" name="form__subject" id="form__subject">
                 </div>
                 
                 <div class="form__field">
@@ -73,19 +83,15 @@ druhá možnost viz https://extension.umaine.edu/plugged-in/technology-marketing
                     <textarea name="form__message" id="form__message" rows="8"></textarea>
                 </div>
     
-                <div class="form__field">
-                    <label for="form__file">Příloha</label>
-                    <input type="file" name="form__file" id="form__file">
-                </div>
-                
-                <!--přesměrování na stránky po odeslání formuláře-->
-                <input type="hidden" name="_redirect" value="https://firaprint.cz/kontakt/"/>
+                <!--přesměrování na stránky po odeslání formuláře
+                <input type="hidden" name="_redirect" value="https://firaprint.cz/kontakt/odeslano/"/>
+                -->
 
                 <button class="button" type="submit">Odeslat</button>
     
             </form>
     
-        </div> <!--konec divu pro formulář-->
+        </div>
         
     </div>
 

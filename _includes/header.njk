@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Firaprint potisk kelímků</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/glider.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -35,11 +37,13 @@
         <nav class="menu">
     
             <ul class="menu__list">
-                <li class="menu__item"><a href="/" class="menu__link">O nás</a></li>
-                <li class="menu__item"><a href="/ceny/" class="menu__link">Ceny</a></li>
-                <li class="menu__item"><a href="/galerie/" class="menu__link">Galerie</a></li>
-                <li class="menu__item"><a href="/obchodnipodminky/" class="menu__link">Obchodní podmínky</a></li>
-                <li class="menu__item"><a href="/kontakt/" class="menu__link">Kontakt</a></li>
+                <li class="menu__item"><a href="/" class="menu__link {{'menu__link--active' if page.fileSlug === ''}}">O nás</a></li>
+                <li class="menu__item"><a href="/ceny/" class="menu__link {{'menu__link--active' if page.fileSlug === 'ceny'}}">Ceny</a></li>
+                <li class="menu__item"><a href="/galerie/" class="menu__link {{'menu__link--active' if page.fileSlug === 'galerie'}}">Fotogalerie</a></li>
+                <!--
+                <li class="menu__item"><a href="/obchodnipodminky/" class="menu__link {{'menu__link--active' if page.fileSlug === 'obchodnipodminky'}}">Obchodní podmínky</a></li>
+                -->
+                <li class="menu__item"><a href="/kontakt/" class="menu__link {{'menu__link--active' if page.fileSlug === 'kontakt'}}">Kontakt</a></li>
             </ul>
     
         </nav>
@@ -54,14 +58,28 @@
     
         <footer class="footer">
 
-            <div class="footer__links">
+            <div class="footer__top">
 
-                <h4>Možná hledáte:</h4>
-                <a class="link link--footer" href="/kontakt/" title="Kontaktní formulář">Kontaktní formulář</a>
-                <a class="link link--footer" href="/galerie/" title="Galerie">Ukázka potisknutých kelímků</a>
-                <a class="link link--footer" href="/obchodnipodminky/" title="Obchodní podmínky">Obchodní podmínky</a>
-                <a class="link link--footer" href="/kontakt/" title="Fakturační údaje">Fakturační údaje</a>
+                <div class="footer__links">
 
+                    <h4>Možná hledáte:</h4>
+                    <a class="link link--footer" href="/kontakt/" title="Kontaktní formulář">Kontaktní formulář</a>
+                    <a class="link link--footer" href="/galerie/" title="Fotogalerie">Ukázka potisknutých kelímků</a>
+                    <a class="link link--footer" href="/obchodnipodminky/" title="Obchodní podmínky">Obchodní podmínky</a>
+                    <a class="link link--footer" href="/kontakt/" title="Fakturační údaje">Fakturační údaje</a>
+    
+                </div>
+    
+                <div class="footer__social-media">
+    
+                </div>
+    
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    <p>&copy;2022, firaprint</p>
+                </div>
             </div>
             
         </footer>
@@ -69,6 +87,26 @@
     </div>
 
 <script src="/js/fslightbox.js"></script>
+
+<script src="/js/glider.min.js"></script>
+
+<script src="/js/glider-autoplay.min.js"></script>
+
+<script>
+    gliderAutoplay(new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        dots: ".dots",
+        draggable: true,
+        rewind: true,
+        arrows: {
+            prev: ".glider-prev",
+            next: ".glider-next"
+        }
+    }),{
+        interval: 4000,
+        pausable: true,
+    });
+</script>
 
 </body>
 </html>

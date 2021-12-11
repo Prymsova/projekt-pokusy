@@ -1,4 +1,166 @@
 @charset "UTF-8";
+/*původní formulace z patičky, kde toto byl div zabalující celý formulář vč. nadpisu*/
+.contact-form {
+  background-color: #FAFAFA;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/*toto byl element čistě s formulářem a jednotlivými položkami*/
+.form {
+  width: 100%;
+}
+.form__field {
+  margin-bottom: 10px;
+}
+.form__field label {
+  display: block;
+}
+.form__field input[type=text], .form__field input[type=tel], .form__field input[type=email], .form__field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid silver;
+  border-radius: 4px;
+}
+
+.button {
+  display: block;
+  background-color: #FFFF8D;
+  color: #212121;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  padding: 10px 15px;
+  margin: 15px 0;
+  box-shadow: 4px 4px 4px silver;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.button:hover, .button:focus {
+  background-color: #FBC02D;
+}
+.button:active {
+  background-color: #FBC02D;
+  box-shadow: 1px 1px 2px silver;
+  transform: translate(3px, 3px);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 0 15px;
+}
+
+.gallery__item {
+  border: 1px solid silver;
+  border-radius: 2px;
+  padding: 30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.gallery__item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+.gallery__item:hover {
+  border: 2px solid #FBC02D;
+}
+.gallery__item:hover img {
+  transform: scale(1.1);
+}
+
+.photo-product {
+  width: 100%;
+  min-width: 300px;
+  margin: 30px auto;
+}
+@media screen and (min-width: 750px) {
+  .photo-product {
+    width: 75%;
+  }
+}
+
+.glider {
+  max-width: 450px;
+}
+.glider__item {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px dotted silver;
+  min-height: 100px;
+  min-width: 100px;
+  width: 100%;
+}
+.glider__text {
+  color: #616161;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.header {
+  padding: 30px;
+}
+@media screen and (min-width: 750px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header__contact {
+  text-align: center;
+  font-size: 24px;
+}
+@media screen and (min-width: 750px) {
+  .header__contact {
+    /*flex: 0 0 (100% / 2 - base.$space-primary / 2);*/
+    text-align: right;
+  }
+}
+.header__contact > * {
+  margin: 0;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 750px) {
+  .hero {
+    margin-bottom: 0;
+    /* flex: 1 1 calc((100% - base.$space-primary) / 2);*/
+    align-items: center;
+  }
+}
+.hero__logo {
+  padding-right: 30px;
+}
+.hero__text {
+  margin: 0;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 600;
+}
+@media screen and (min-width: 750px) {
+  .hero__text {
+    max-width: 220px;
+    /*kvůli zalomení řádků*/
+  }
+}
+@media screen and (min-width: 850px) {
+  .hero__text {
+    max-width: 500px;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -24,172 +186,39 @@ body {
   min-width: 300px;
 }
 
-h3 {
-  margin: 0 0 10px 0;
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
+.tucne {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.section p:first-child {
+  margin-top: 0;
+}
 .section-terms-of-trade {
   font-size: 14px;
   line-height: 1.2;
   font-weight: 300;
 }
-
-.header {
-  padding: 30px;
-}
-@media screen and (min-width: 700px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-.header__contact {
+.section-reference, .section-photo {
   text-align: center;
-  font-size: 24px;
-}
-@media screen and (min-width: 700px) {
-  .header__contact {
-    flex: 0 0 calc((100% - $space-primary) / 2);
-    text-align: right;
-  }
-}
-.header__contact > * {
-  margin: 0;
-}
-
-.phone,
-.email {
-  text-decoration: none;
-  color: #212121;
-}
-.phone--small,
-.email--small {
-  font-size: 18px;
-  margin: 10px 0;
-}
-.phone:hover, .phone:focus,
-.email:hover,
-.email:focus {
-  text-decoration: underline;
-  color: #FBC02D;
-}
-
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 30px;
 }
-@media screen and (min-width: 700px) {
-  .hero {
-    margin-bottom: 0;
-    flex: 1 1 calc((100% - $space-primary) / 2);
-    align-items: center;
-  }
-}
-.hero__logo {
-  padding-right: 30px;
-}
-.hero__text {
-  margin: 0;
-  font-family: "Signika Negative", sans-serif;
-  font-weight: 600;
-}
-@media screen and (min-width: 700px) {
-  .hero__text {
-    max-width: 220px;
-    /*kvůli zalomení řádků*/
-  }
-}
-@media screen and (min-width: 850px) {
-  .hero__text {
-    max-width: 500px;
-  }
-}
-
-/*.contacts-phone::before {
-    content: " ";
-    display: block;
-    height: 15px;
-    width: 15px;
-    background-image: url(/icons/phone.svg);
-    margin-right: 10px;
-}*/
-.menu {
+.section-about-us {
   margin-bottom: 30px;
-}
-.menu__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-@media screen and (min-width: 700px) {
-  .menu__list {
-    display: flex;
-    justify-content: center;
-  }
-}
-.menu__item {
-  margin-bottom: 15px;
-}
-@media screen and (min-width: 700px) {
-  .menu__item {
-    margin-bottom: 0;
-  }
-}
-@media screen and (min-width: 700px) {
-  .menu__item:not(:last-child) {
-    border-right: 1px solid silver;
-  }
-}
-.menu__link {
-  text-decoration: none;
-  color: #212121;
-  font-size: 24px;
-  display: inline-block;
-  padding: 15px 30px;
-  border: 1px solid silver;
-  border-radius: 4px;
-  box-shadow: 4px 4px 4px silver;
-  min-width: 300px;
-}
-@media screen and (min-width: 700px) {
-  .menu__link {
-    min-width: auto;
-    border: none;
-    box-shadow: none;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 10px 30px;
-  }
-}
-.menu__link:hover, .menu__link:focus, .menu__link:active {
-  background-color: #FFFF8D;
-  font-weight: 700;
-}
-@media screen and (min-width: 700px) {
-  .menu__link:hover, .menu__link:focus, .menu__link:active {
-    text-decoration: underline;
-  }
-}
-
-.link {
-  color: #212121;
-  font-weight: bold;
-}
-.link--footer {
-  font-weight: 400;
-  font-size: 14px;
-  display: block;
-}
-.link:hover, .link:focus, .link:active {
-  color: #FBC02D;
 }
 
 .main,
-.footer {
+.footer__top {
   padding: 15px 30px;
 }
 
@@ -199,27 +228,20 @@ h3 {
 .footer h4 {
   color: #212121;
 }
+.footer__copyright {
+  background-color: #FFFF8D;
+  color: grey;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0;
+}
+.footer__copyright p {
+  margin: 0;
+}
 
-.button {
-  display: block;
-  background-color: #FBC02D;
-  color: #212121;
-  font-family: "Signika Negative", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  padding: 10px 15px;
-  margin: 15px 0;
-  box-shadow: 4px 4px 4px silver;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.button:hover, .button:focus {
-  background-color: #FFFF8D;
-}
-.button:active {
-  background-color: #FFFF8D;
-  box-shadow: 1px 1px 2px silver;
-  transform: translate(3px, 3px);
+.price-bio__text,
+.price-standard__text {
+  margin-bottom: 30px;
 }
 
 /*.contacts__ je div v záložce kontakty, do které jsem do pravého sloupce gridu vložila formulář, resp. div .contact-form, v levém sloupci div .contacts__left-column*/
@@ -245,57 +267,127 @@ h3 {
   width: 100%;
 }
 
-/*původní formulace z patičky, kde toto byl div zabalující celý formulář vč. nadpisu*/
-.contact-form {
-  background-color: #FAFAFA;
-  margin: 0 auto;
-  padding: 10px;
-  max-width: 400px;
-  width: 100%;
+.phone,
+.email {
+  text-decoration: none;
+  color: #212121;
+}
+.phone--small,
+.email--small {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.phone:hover, .phone:focus, .phone:active,
+.email:hover,
+.email:focus,
+.email:active {
+  text-decoration: underline;
+  color: #FBC02D;
 }
 
-/*toto byl element čistě s formulářem a jednotlivými položkami*/
-.form {
-  width: 100%;
+.link {
+  color: #212121;
+  font-weight: bold;
 }
-.form__field {
-  margin-bottom: 10px;
-}
-.form__field label {
+.link--footer {
+  font-weight: 400;
+  font-size: 14px;
   display: block;
 }
-.form__field input[type=text], .form__field input[type=email], .form__field textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
+.link--terms {
+  font-weight: 400;
+}
+.link:hover, .link:focus, .link:active {
+  color: #FBC02D;
+}
+
+.terms-of-trade__list {
+  list-style: none;
+}
+
+.menu {
+  margin-bottom: 30px;
+}
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+@media screen and (min-width: 750px) {
+  .menu__list {
+    display: flex;
+    justify-content: center;
+  }
+}
+.menu__item {
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 750px) {
+  .menu__item {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 750px) {
+  .menu__item:not(:last-child) {
+    border-right: 1px solid silver;
+  }
+}
+.menu__link {
+  text-decoration: none;
+  color: #212121;
+  font-size: 24px;
+  display: inline-block;
+  padding: 15px 30px;
   border: 1px solid silver;
   border-radius: 4px;
+  box-shadow: 4px 4px 4px silver;
+  min-width: 300px;
+}
+@media screen and (min-width: 750px) {
+  .menu__link {
+    min-width: auto;
+    border: none;
+    box-shadow: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 30px;
+  }
+}
+.menu__link:hover, .menu__link:focus, .menu__link:active {
+  background-color: #FFFF8D;
+  font-weight: 700;
+}
+.menu__link--active {
+  background-color: #FFFF8D;
+  font-weight: 700;
 }
 
-.gallery__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 0 15px;
-}
-
-.gallery__item {
-  border: 1px solid silver;
-  border-radius: 2px;
-  padding: 5px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.gallery__item img {
+.table {
+  min-width: 500px;
   width: 100%;
-  display: block;
-  transition: transform 0.5s;
+  box-shadow: 0px 0px 5px silver;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 auto;
 }
-.gallery__item:hover {
-  border: 2px solid #FBC02D;
+@media screen and (min-width: 750px) {
+  .table {
+    width: 75%;
+  }
 }
-.gallery__item:hover img {
-  transform: scale(1.2);
+.table th {
+  border: 1px solid silver;
+  padding: 10px;
+  background-color: #F5F5F5;
+  width: 25%;
+}
+.table td {
+  border: 1px solid silver;
+  padding: 10px;
+  font-weight: 300;
+}
+.table tr:hover, .table tr:focus {
+  background-color: #FFFF8D;
 }/*# sourceMappingURL=style.css.map */

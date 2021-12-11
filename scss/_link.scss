@@ -11,23 +11,12 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         text-decoration: underline;
         color: base.$color-secundary;
     }
 }
-
-
-/*.contacts-phone::before {
-    content: " ";
-    display: block;
-    height: 15px;
-    width: 15px;
-    background-image: url(/icons/phone.svg);
-    margin-right: 10px;
-}*/
-
-
 
 .link {
     color: base.$color-text;
@@ -39,9 +28,17 @@
         display: block;
     }
 
+    &--terms {
+        font-weight: 400;
+    }
+
     &:hover,
     &:focus,
     &:active {
         color: base.$color-secundary;
     }
+}
+
+.terms-of-trade__list {
+    list-style: none;
 }

@@ -1,7 +1,11 @@
 @use "base";
 
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
 body {
-    background-color: #F5F5F5;
+    background-color: base.$color-lightgrey;
     margin: 0;
 }
 
@@ -17,18 +21,40 @@ body {
     min-width: 300px;
 }
 
-h3 {
-    margin: 0 0 base.$space-primary/3 0;
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    margin-bottom: base.$space-primary/3;
 }
 
-.section-terms-of-trade {
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 300;
+.tucne {font-weight: 600;}
+strong {font-weight: 400;}
+
+.section {
+    & p:first-child {
+        margin-top: 0;
+    }
+
+    &-terms-of-trade {
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 300;
+    }
+
+    &-reference,
+    &-photo {
+        text-align: center;
+        margin-bottom: base.$space-primary;
+    }
+
+    &-about-us {
+        margin-bottom: base.$space-primary;
+    }
 }
 
 .main,
-.footer {
+.footer__top {
     padding: base.$space-primary/2 base.$space-primary;
 }
 
@@ -38,6 +64,23 @@ h3 {
     h4 {
         color: base.$color-text;
     }
+
+    &__copyright {
+        background-color: base.$color-primary;
+        color: grey;
+        font-size: 14px;
+        text-align: center;
+        padding: base.$space-primary/3 0;
+
+        & p {
+            margin: 0;
+        }
+    }
+}
+
+.price-bio__text,
+.price-standard__text {
+    margin-bottom: base.$space-primary;
 }
 
 /*.contacts__ je div v záložce kontakty, do které jsem do pravého sloupce gridu vložila formulář, resp. div .contact-form, v levém sloupci div .contacts__left-column*/
@@ -45,7 +88,7 @@ h3 {
     @media screen and (min-width: base.$break-point2) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: $space-primary/2;
+        gap: base.$space-primary/2;
         align-items: start;
     }
 }

@@ -1,9 +1,8 @@
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
 @use "form";
 @use "gallery";
+@use "glider";
 @use "header";
 @use "layout";
 @use "link";
 @use "menu";
+@use "table";

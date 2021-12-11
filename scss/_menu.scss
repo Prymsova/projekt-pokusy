@@ -45,7 +45,8 @@
             border: none;
             box-shadow: none;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
+            text-transform: uppercase;
             padding: base.$space-primary/3 base.$space-primary;
         }
         
@@ -55,10 +56,11 @@
         &:active {
             background-color: base.$color-primary;
             font-weight: 700;
+        }
 
-            @media screen and (min-width: base.$break-point) {
-                text-decoration: underline;
-            }
+        &--active {
+            background-color: base.$color-primary;
+            font-weight: 700;
         }
     }
 
