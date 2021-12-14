@@ -76,6 +76,11 @@ strong {font-weight: 400;}
             margin: 0;
         }
     }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .price-bio__text,

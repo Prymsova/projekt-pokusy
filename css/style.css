@@ -17,6 +17,7 @@
 }
 .form__field label {
   display: block;
+  font-size: 16px;
 }
 .form__field input[type=text], .form__field input[type=tel], .form__field input[type=email], .form__field textarea {
   width: 100%;
@@ -24,6 +25,15 @@
   font-size: 16px;
   border: 1px solid silver;
   border-radius: 4px;
+}
+.form__note {
+  font-size: 14px;
+  color: #555555;
+  font-style: italic;
+}
+
+.form-send {
+  text-align: center;
 }
 
 .button {
@@ -58,7 +68,7 @@
 .gallery__item {
   border: 1px solid silver;
   border-radius: 2px;
-  padding: 30px;
+  padding: 20px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -238,6 +248,10 @@ strong {
 .footer__copyright p {
   margin: 0;
 }
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+}
 
 .price-bio__text,
 .price-standard__text {
@@ -379,7 +393,7 @@ strong {
 }
 .table th {
   border: 1px solid silver;
-  padding: 10px;
+  padding: 5px 10px;
   background-color: #F5F5F5;
   width: 25%;
 }
@@ -389,5 +403,11 @@ strong {
   font-weight: 300;
 }
 .table tr:hover, .table tr:focus {
-  background-color: #FFFF8D;
+  background-color: #FAFAFA;
+}
+.table__note {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
